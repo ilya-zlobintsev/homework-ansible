@@ -1,0 +1,6 @@
+- name: Create /etc/iaac
+  ansible.builtin.file:
+    path: /etc/iaac
+    state: touch
+    mode: '0500'
+

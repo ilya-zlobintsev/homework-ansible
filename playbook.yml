@@ -1,0 +1,12 @@
+- hosts: iaas
+  become: true
+  roles: 
+    - iaac-file
+- hosts: all
+  roles:
+    - distro-print
+  tasks:
+    - name: Print info for each host
+      debug:
+        msg:
+          - "Host {{ ansible_hostname }} is running {{ distro }}"
