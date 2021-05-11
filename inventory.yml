@@ -14,8 +14,8 @@ all:
       hosts:
         debian4.vm:
     iaas:
-      hosts:
-        debian1.vm:
-        debian2.vm:
+	  children:
+        vm1:
+        vm2:
   vars:
     ansible_python_interpreter: /usr/bin/python3
