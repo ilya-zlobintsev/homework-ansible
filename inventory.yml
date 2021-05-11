@@ -14,7 +14,7 @@ all:
       hosts:
         debian4.vm:
     iaas:
-	  children:
+      children:
         vm1:
         vm2:
   vars:
