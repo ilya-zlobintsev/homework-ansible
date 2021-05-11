@@ -10,6 +10,9 @@ all:
     vm3:
       hosts:
         debian3.vm:
+    vm4:
+      hosts:
+        debian4.vm:
     iaas:
       hosts:
         debian1.vm:
