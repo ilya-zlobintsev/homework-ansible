@@ -1,0 +1,25 @@
+- name: Update apt packages
+  when: ansible_facts['os_family'] == "Debian"
+  become: yes
+  apt:
+    update_cache: yes
+    upgrade: dist
+    cache_valid_time: 3600
+  register: update_status
+
+- name: Update rpm packages
+  when: ansible_facts['os_family'] == "RedHat"
+  become: yes
+  yum:
+    name: '*'
+    state: latest
+  register: update_status
+
+- name: Update pacman packages
+  when: ansible_facts['os_family'] == "Archlinux"
+  become: yes
+  pacman: 
+    update_cache: yes
+    upgrade: yes
+  register: update_status
+
